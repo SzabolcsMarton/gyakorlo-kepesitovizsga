@@ -1,7 +1,6 @@
 package phonebook;
 
 import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -15,7 +14,7 @@ public class Phonebook {
             writeFromMap(contacts, writer);
         }
         catch (IOException ioe) {
-            throw new IllegalStateException("Can not write file", ioe);
+            throw new IllegalStateException("Can not write file: " + output, ioe);
         }
     }
 
@@ -25,7 +24,6 @@ public class Phonebook {
             writer.newLine();
         }
     }
-
 
     private void ensureParamsNotNull(Map<String, String> contacts, String output) {
         if (contacts == null ) {

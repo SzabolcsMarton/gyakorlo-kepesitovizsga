@@ -1,9 +1,11 @@
 package adddigits;
 
+import java.util.Arrays;
+
 public class AddDigits {
 
     public int addDigits(String input) {
-        if (ensureInputIsInValid(input)){
+        if (isInputValid(input)){
             return -1;
         }
         char[]charactersInInput = input.toCharArray();
@@ -24,11 +26,9 @@ public class AddDigits {
         return Character.isDigit(charToCheck);
     }
 
-    private boolean ensureInputIsInValid(String stringToValidat){
-        if(stringToValidat == "" || stringToValidat == null){
-            return true;
-        }
-        return false;
+    private boolean isInputValid(String stringToValidat){
+        return stringToValidat == null || stringToValidat.isBlank();
+
     }
 
     private int convertCharToInt(char charToConvert){

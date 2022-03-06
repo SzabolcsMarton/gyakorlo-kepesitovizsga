@@ -10,7 +10,5 @@ public class Archer extends MilitaryUnit{
         super(INITIAL_HITPOINTS, INITIAL_DAMAGE, INITIAL_ARMOR);
     }
 
-    public int getHitPoints() {
-        return super.getHitPoints();
-    }
+
 }
